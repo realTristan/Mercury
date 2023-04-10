@@ -1,4 +1,5 @@
-# Search Engine
+# Mercury Search Engine
+![istockphoto-1451136213-170667a](https://user-images.githubusercontent.com/75189508/230964890-0b6a7786-1922-4a7f-8719-98bcd62516c2.jpg)
 
 ## Getting the Data
 Download a bunch of data from the web
