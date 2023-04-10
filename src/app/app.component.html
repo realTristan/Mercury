@@ -1,0 +1,17 @@
+
+<!-- 
+  By setting the (keyup)="0" then an event change check is called (by angular),
+  and will update the value of the "search" variable.
+-->
+<h1>Welcome to Tristan's Angular Search Engine!</h1>
+<label>Search for: </label><input #search (keyup)="0">
+<p>{{search.value}}</p>
+
+<!-- Use the search-settings component -->
+<app-search-settings></app-search-settings>
+
+<!-- Use the user-settings component -->
+<app-user-settings></app-user-settings>
+
+<!-- Don't change this. This is for angular routing.-->
+<router-outlet></router-outlet>
