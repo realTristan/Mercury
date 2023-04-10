@@ -3,22 +3,27 @@
 
 # UNFINISHED
 
-## Getting the Data
-Download a bunch of data from the web
+## Course Data
+- Use the University of Toronto Courses
+- Use the University of Waterloo Courses
 
 ## To-do Frontend
-- Install Tailwind CSS
-- Style better
+- Use a Virtual List for rendering courses
+- Install Tailwind CSS and style better
 - Build a login system with firebase
-- Have a menu for the user to delete their search history and to change their profile settings
+- Have a menu for the user to delete their search history and to change their profile settings\
+- Have a menu where the user can select their year (1st, 2nd, etc.), the year of the course, etc.
 
 ## To-do Backend
 - Build a caching system in the backend server
 - Store the users search history in a database
-- Store the web data in a database
+- Create a Redis implementation
+- Create an ElasticSearch implementation
+- Create an implementation of the algorithm I made
 
-## Stack 1
-- MongoDB, then Redis, then Cassandra, then ElasticSearch
+## Stack (MREAN)
+- MongoDB
+- Redis, and ElasticSearch
 - Express
 - Angular
 - Node
