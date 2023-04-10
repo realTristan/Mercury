@@ -3,12 +3,16 @@
 ## Getting the Data
 Download a bunch of data from the web
 
-## To-do
-- Build a caching system
+## To-do Frontend
+- Install Tailwind CSS
+- Style better
 - Build a login system with firebase
-- Store the users search history in a database
 - Have a menu for the user to delete their search history and to change their profile settings
-- Store the data from the web in a database
+
+## To-do Backend
+- Build a caching system in the backend server
+- Store the users search history in a database
+- Store the web data in a database
 
 ## Stack 1
 - MongoDB, then Redis, then Cassandra, then ElasticSearch
