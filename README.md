@@ -1,4 +1,4 @@
-# Mercury Search Engine
+# Mercury ![Stars](https://img.shields.io/github/stars/realTristan/Mercury?color=brightgreen) ![Watchers](https://img.shields.io/github/watchers/realTristan/Mercury?label=Watchers)
 ![wp7054610](https://user-images.githubusercontent.com/75189508/230965107-5fa1c53a-c6ab-4d10-986c-5316aa49a9f0.jpg)
 
 ## Getting the Data
