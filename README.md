@@ -1,4 +1,6 @@
 # Mercury ![Stars](https://img.shields.io/github/stars/realTristan/Mercury?color=brightgreen) ![Watchers](https://img.shields.io/github/watchers/realTristan/Mercury?label=Watchers)
+![image](https://user-images.githubusercontent.com/75189508/232159569-918d3fcf-e347-41e3-ac65-ac1ddbc15fa0.png)
+
 ![banner](https://user-images.githubusercontent.com/75189508/230986670-0966c0e0-3eaa-4746-a8dc-891deb1fb205.png)
 
 # UNFINISHED
