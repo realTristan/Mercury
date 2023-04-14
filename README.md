@@ -8,8 +8,6 @@
 - Use the University of Waterloo Courses
 
 ## To-do Frontend
-- Use a Virtual List for rendering courses
-- Install Tailwind CSS and style better
 - Build a login system with firebase
 - Have a menu for the user to delete their search history and to change their profile settings\
 - Have a menu where the user can select their year (1st, 2nd, etc.), the year of the course, etc.
