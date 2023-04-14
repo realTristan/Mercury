@@ -32,7 +32,7 @@
     <p *ngIf="search.value != undefined && search.value.length > 0" class="text-gray-400">
       {{ resultCount }} results for {{ search.value }} in {{ time }}ms
     </p>
-    <cdk-virtual-scroll-viewport class="virtual_list" style="height: 600px; margin-top: 1rem;" itemSize="90">
+    <cdk-virtual-scroll-viewport class="virtual_list" style="height: 600px; margin-top: 1rem;" itemSize="10">
       <ng-container *cdkVirtualFor="let course of courses">
         <app-course [course]="course"></app-course>
       </ng-container>
