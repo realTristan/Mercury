@@ -1,0 +1,12 @@
+cdk-virtual-scroll-viewport {
+    position: relative;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: none;
+    display: block;
+}
+cdk-virtual-scroll-viewport::-webkit-scrollbar { width: 0px; } /* width: 20px; */
+/*
+cdk-virtual-scroll-viewport::-webkit-scrollbar-track { background: #f1f1f1; }
+cdk-virtual-scroll-viewport::-webkit-scrollbar-thumb { background: #2563EB; }
+cdk-virtual-scroll-viewport::-webkit-scrollbar-thumb:hover { background: #1256eb; }
+*/

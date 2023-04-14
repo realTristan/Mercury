@@ -1,0 +1,15 @@
+
+<div class="my-8 w-[55rem]">
+  <p><strong>{{ course.title }}: {{ course.name }}</strong></p>
+
+  <!-- Course Description -->
+  <p style="font-size: 14.5px">{{ course.description }}</p>
+  <p style="font-size: 13px; margin-top: 1px"><strong>Pre Requisites </strong>{{ course.pre_requisites }}</p>
+  <p *ngIf="course.anti_requisites != undefined" style="font-size: 13px"><strong>Anti Requisites </strong>{{ course.anti_requisites }}</p>
+  <a style="font-size: 12px" href="" target="_blank" rel="noreferrer noopener">
+    Official Website
+    {{ emptySpace(4) }} Components {{ course.components }}
+    {{ emptySpace(4) }} Unit {{ course.unit }} {{ emptySpace(4) }} ID
+    {{ course.id }}
+  </a>
+</div>

@@ -5,16 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchSettingsComponent } from './search-settings/search-settings.component';
 import { UserSettingsComponent } from './user-settings/user-settings.component';
+import { CourseComponent } from './course/course.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchSettingsComponent,
-    UserSettingsComponent
+    UserSettingsComponent,
+    CourseComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
