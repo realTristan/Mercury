@@ -38,7 +38,11 @@
     </div>
 
     <!-- Show the app settings if the user is signed in hasn't searched anything yet -->
-    <app-settings *ngIf="isLoggedIn && search.value.length == 0"></app-settings>
+    <app-settings 
+      *ngIf="isLoggedIn && search.value.length == 0"
+      [bookmarkedCourses]="bookmarkedCourses"
+      [user]="user"
+    ></app-settings>
 
     <!-- Results Count -->
     <p *ngIf="search.value != undefined && search.value.length > 0" class="text-gray-400">

@@ -14,9 +14,16 @@ export class AppComponent implements OnInit {
   resultCount: number = 0;
   time: number = 0;
   courses: any[] = [];
+  bookmarkedCourses: any[] = [{
+    title: "Introduction to Computer Science",
+    name: "CS100",
+    id: "012560"
+  }];
+
   // Google Auth variables
   user: SocialUser = new SocialUser;
   isLoggedIn: boolean = false;
+
   // Google Auth Initialization
   ngOnInit(): void {
     this.authService.authState.subscribe((user: SocialUser) => {
