@@ -18,38 +18,22 @@ export class AppComponent implements OnInit {
 
   // Google Auth variables
   user: SocialUser = new SocialUser;
-  isSignedIn: boolean = false;
+  isLoggedIn: boolean = false;
 
   // Google Auth Initialization
   ngOnInit(): void {
     this.authService.authState.subscribe((user: SocialUser) => {
       this.user = user;
-      this.isSignedIn = (user != null);
+      this.isLoggedIn = (user != null);
     });
-  }
-
-  // Sign in with Google
-  signInWithGoogle(): Promise<boolean> {
-    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID, {scope: 'profile email'});
-    if (this.isSignedIn) {
-      return Promise.resolve(true);
-    }
-    return Promise.resolve(false);
   }
 
   // Method to toggle the settings
   loadSettings(): void {
-    if (this.isSignedIn) {
+    if (this.isLoggedIn) {
       this.showSettings = !this.showSettings;
       return;
     }
-    /*
-    this.signInWithGoogle().then((res) => {
-      if (res) {
-        this.showSettings = !this.showSettings;
-      }
-    });
-    */
   }
 
   // Method to query for courses

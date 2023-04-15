@@ -9,6 +9,7 @@ import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-s
 import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
 import { environment } from './environments/environment';
 import { SettingsComponent } from './settings/settings.component';
+import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SettingsComponent } from './settings/settings.component';
     BrowserModule,
     AppRoutingModule,
     ScrollingModule,
-    SocialLoginModule
+    SocialLoginModule,
+    GoogleSigninButtonModule,
   ],
   providers: [{
     provide: 'SocialAuthServiceConfig',

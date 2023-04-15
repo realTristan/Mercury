@@ -23,12 +23,17 @@
 
     <!-- Settings Button and Search Bar -->
     <div class="flex">
-      <button
-        class="rounded-md bg-slate-950 mr-3 px-3 text-white h-[2.6rem] mt-3 active:bg-blue-600 font-normal hover:bg-slate-900 hover:rounded-lg duration-300 ease-in-out"
-        (click)="loadSettings()"
+      <img 
+        src="assets/settings.png" 
+        (click)="showSettings = !showSettings" 
+        class="cursor-pointer h-10 w-10 mt-3.5 mr-2"
+      />
+      <asl-google-signin-button 
+        type="standard" 
+        size="large" 
+        class="mr-3 px-3 mt-3.5"
       >
-        Settings
-      </button>
+      </asl-google-signin-button>
       <input
         #search
         (keyup)="query(search.value)"
@@ -38,7 +43,7 @@
     </div>
 
     <!-- Show the app settings if the user is signed in and clicked the settings button -->
-    <app-settings *ngIf="isSignedIn && showSettings"></app-settings>
+    <app-settings *ngIf="isLoggedIn && showSettings"></app-settings>
 
     <!-- Results Count -->
     <p *ngIf="search.value != undefined && search.value.length > 0" class="text-gray-400">
