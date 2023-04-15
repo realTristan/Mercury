@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CourseComponent } from './course/course.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
@@ -14,7 +13,6 @@ import { Bookmarks } from './lib/bookmarks';
 @NgModule({
   declarations: [
     AppComponent,
-    CourseComponent,
   ],
   imports: [
     BrowserModule,

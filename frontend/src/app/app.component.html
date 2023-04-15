@@ -59,7 +59,20 @@
     <!-- Course List -->
     <cdk-virtual-scroll-viewport class="virtual_list" style="height: 600px; margin-top: 1rem" itemSize="10">
       <ng-container *cdkVirtualFor="let course of courses">
-        <app-course [course]="course" [user]="user"></app-course>
+        <div class="my-8 w-[55rem] hover:bg-gray-100 cursor-pointer" (click)="bookmarks.insert(user.id, course)">
+          <p><strong>{{ course.title }}: {{ course.name }}</strong></p>
+        
+          <!-- Course Description -->
+          <p style="font-size: 14.5px">{{ course.description }}</p>
+          <p style="font-size: 13px; margin-top: 1px"><strong>Pre Requisites </strong>{{ course.pre_requisites }}</p>
+          <p *ngIf="course.anti_requisites != undefined" style="font-size: 13px"><strong>Anti Requisites </strong>{{ course.anti_requisites }}</p>
+          <a style="font-size: 12px" href="" target="_blank" rel="noreferrer noopener">
+            Official Website
+            {{ emptySpace(4) }} Components {{ course.components }}
+            {{ emptySpace(4) }} Unit {{ course.unit }} {{ emptySpace(4) }} ID
+            {{ course.id }}
+          </a>
+        </div>
       </ng-container>
     </cdk-virtual-scroll-viewport>
   </div>

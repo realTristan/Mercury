@@ -55,4 +55,9 @@ export class AppComponent implements OnInit {
         this.time = res.time / 1000;
       });
   }
+
+  // Method to return an empty space string
+  emptySpace(amount: number): string {
+    return "‏‏‎ ‎".repeat(amount)
+  }
 }
