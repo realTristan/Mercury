@@ -63,6 +63,6 @@ app.delete('/bookmarks', (req, res) => __awaiter(void 0, void 0, void 0, functio
 }));
 // Start the server
 // Command: npm start
-app.listen(8000, () => {
-    console.log('Listening on: http://localhost:8000');
+app.listen(9000, () => {
+    console.log('Listening on: http://localhost:9000');
 });

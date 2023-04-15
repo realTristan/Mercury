@@ -10,6 +10,7 @@ import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
 import { environment } from './environments/environment';
 import { SettingsComponent } from './settings/settings.component';
 import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
+import { Bookmarks } from './lib/bookmarks';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
     SocialLoginModule,
     GoogleSigninButtonModule,
   ],
-  providers: [{
+  providers: [
+    Bookmarks,
+    {
     provide: 'SocialAuthServiceConfig',
     useValue: {
       autoLogin: true,

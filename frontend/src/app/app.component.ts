@@ -1,5 +1,6 @@
 import { GoogleLoginProvider, SocialAuthService, SocialUser } from '@abacritt/angularx-social-login';
 import { Component, OnInit } from '@angular/core';
+import { Bookmarks } from './lib/bookmarks';
 
 @Component({
   selector: 'app-root',
@@ -7,18 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  constructor(private authService: SocialAuthService) {}
+  // Constructor
+  constructor(private authService: SocialAuthService, public bookmarks: Bookmarks) {}
 
   // Variables
-  title: string = 'mercury';
   resultCount: number = 0;
   time: number = 0;
   courses: any[] = [];
-  bookmarkedCourses: any[] = [{
-    title: "Introduction to Computer Science",
-    name: "CS100",
-    id: "012560"
-  }];
 
   // Google Auth variables
   user: SocialUser = new SocialUser;
@@ -29,6 +25,11 @@ export class AppComponent implements OnInit {
     this.authService.authState.subscribe((user: SocialUser) => {
       this.user = user;
       this.isLoggedIn = (user != null);
+
+      // If the user is logged in, then get their bookmarks
+      if (this.isLoggedIn) {
+        this.bookmarks.get(this.user.id);
+      }
     });
   }
 

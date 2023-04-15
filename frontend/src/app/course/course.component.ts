@@ -1,4 +1,7 @@
+import { SocialUser } from '@abacritt/angularx-social-login';
 import { Component, Input } from '@angular/core';
+import { Inject } from '@angular/core';
+import { Bookmarks } from '../lib/bookmarks';
 
 @Component({
   selector: 'app-course',
@@ -6,22 +9,17 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./course.component.css']
 })
 export class CourseComponent {
-  // Input Course
+  // Input Variables
   @Input()
-  course: any = {};
+  course: any;
+  @Input()
+  user: SocialUser = new SocialUser;
+  
+  // Constructor
+  constructor(public bookmarks: Bookmarks) {}
   
   // Method to return an empty space string
   emptySpace(amount: number): string {
     return "‏‏‎ ‎".repeat(amount)
-  }
-
-  // Method to add the course to the bookmark list
-  bookmark(course: any): void {
-    let course_title: string = course.title;
-    let course_name: string = course.name;
-    let course_id: string = course.id;
-    // Send an http request to the server to add the course to the bookmark list
-    // Add the users firestore id and the course id and the course title and the course name
-    // to the database
   }
 }

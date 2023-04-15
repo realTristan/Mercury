@@ -3,7 +3,7 @@ require('dotenv').config({ path: '/server/.env' })
 
 // Get the mongodb password from the environment variables
 const getMongoPassword = () => {
-  var pass: string | undefined = ""; // process.env.MONGO_PASSWORD;
+  var pass: string | undefined = "8Ii5dsN0O5MpYL1P"; // process.env.MONGO_PASSWORD;
   if (pass == undefined) {
     return "";
   }

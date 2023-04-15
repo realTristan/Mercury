@@ -14,7 +14,7 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 require('dotenv').config({ path: '/server/.env' });
 // Get the mongodb password from the environment variables
 const getMongoPassword = () => {
-    var pass = "xRNsRwRSvBRM5LyP"; // process.env.MONGO_PASSWORD;
+    var pass = "8Ii5dsN0O5MpYL1P"; // process.env.MONGO_PASSWORD;
     if (pass == undefined) {
         return "";
     }
@@ -96,6 +96,9 @@ exports.getBookmarks = getBookmarks;
 // Insert a new bookmark into the database
 function insertBookmark(bookmark) {
     return __awaiter(this, void 0, void 0, function* () {
+        if (yield bookmarkExists(bookmark)) {
+            return {};
+        }
         // Get the collection
         let coll = CLIENT.db("mercury").collection("bookmarks");
         // Insert the bookmark into the database
@@ -107,7 +110,7 @@ function insertBookmark(bookmark) {
             console.log(err);
         }
         // Return the result
-        return null;
+        return {};
     });
 }
 exports.insertBookmark = insertBookmark;
@@ -125,7 +128,7 @@ function deleteBookmark(bookmark) {
             console.log(err);
         }
         // Return null
-        return null;
+        return {};
     });
 }
 exports.deleteBookmark = deleteBookmark;
