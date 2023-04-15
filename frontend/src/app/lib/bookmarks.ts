@@ -42,7 +42,7 @@ export class Bookmarks {
     // Delete the bookmark from the database
     return fetch(`http://localhost:9000/bookmarks/`, {
       method: 'DELETE',
-      body: JSON.stringify({ user_id: userId, id: course.id })
+      body: JSON.stringify({ user_id: userId, id: course.id, title: course.title, name: course.name })
     })
     .then(res => res.json())
     .then(res => res);
