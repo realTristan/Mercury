@@ -7,7 +7,7 @@ import { CourseComponent } from './course/course.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
-import { environment } from './environments/environments';
+import { environment } from './environments/environment';
 import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({

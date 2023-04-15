@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 
 @NgModule({
   imports: [RouterModule.forRoot([
-    { path: '/', component: AppComponent },
+    { path: '', component: AppComponent },
   ])],
   exports: [RouterModule]
 })

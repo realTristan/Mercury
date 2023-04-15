@@ -37,17 +37,19 @@ export class AppComponent implements OnInit {
     return Promise.resolve(false);
   }
 
-  // Navigation method
+  // Method to toggle the settings
   loadSettings(): void {
     if (this.isSignedIn) {
       this.showSettings = !this.showSettings;
       return;
     }
+    /*
     this.signInWithGoogle().then((res) => {
       if (res) {
         this.showSettings = !this.showSettings;
       }
     });
+    */
   }
 
   // Method to query for courses
