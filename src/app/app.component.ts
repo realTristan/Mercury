@@ -14,26 +14,15 @@ export class AppComponent implements OnInit {
   resultCount: number = 0;
   time: number = 0;
   courses: any[] = [];
-  showSettings: boolean = false;
-
   // Google Auth variables
   user: SocialUser = new SocialUser;
   isLoggedIn: boolean = false;
-
   // Google Auth Initialization
   ngOnInit(): void {
     this.authService.authState.subscribe((user: SocialUser) => {
       this.user = user;
       this.isLoggedIn = (user != null);
     });
-  }
-
-  // Method to toggle the settings
-  loadSettings(): void {
-    if (this.isLoggedIn) {
-      this.showSettings = !this.showSettings;
-      return;
-    }
   }
 
   // Method to query for courses

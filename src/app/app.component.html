@@ -21,17 +21,12 @@
       >
     </p>
 
-    <!-- Settings Button and Search Bar -->
+    <!-- Google Button and Search Bar -->
     <div class="flex">
-      <img 
-        src="assets/settings.png" 
-        (click)="showSettings = !showSettings" 
-        class="cursor-pointer h-10 w-10 mt-3.5 mr-2"
-      />
       <asl-google-signin-button 
         type="standard" 
         size="large" 
-        class="mr-3 px-3 mt-3.5"
+        class="mr-1 px-3 mt-3.5"
       >
       </asl-google-signin-button>
       <input
@@ -42,8 +37,8 @@
       />
     </div>
 
-    <!-- Show the app settings if the user is signed in and clicked the settings button -->
-    <app-settings *ngIf="isLoggedIn && showSettings"></app-settings>
+    <!-- Show the app settings if the user is signed in hasn't searched anything yet -->
+    <app-settings *ngIf="isLoggedIn && search.value.length == 0"></app-settings>
 
     <!-- Results Count -->
     <p *ngIf="search.value != undefined && search.value.length > 0" class="text-gray-400">
