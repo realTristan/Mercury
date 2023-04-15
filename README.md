@@ -12,7 +12,6 @@
 ## To-do Backend
 - Use Redisearch with typescript node/express backend
 - Use ElasticSearch with typescript node/express backend
-- Store the users bookmarks in MongoDB
 
 ## Stack (MREAN)
 - MongoDB
