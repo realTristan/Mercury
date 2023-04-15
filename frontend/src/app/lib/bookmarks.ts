@@ -27,7 +27,7 @@ export class Bookmarks {
     // Insert the bookmark into the database
     return fetch(`http://localhost:9000/bookmarks`, {
       method: 'POST',
-      body: JSON.stringify({ user_id: "tristan", id: course.id, title: course.title, name: course.name })
+      body: JSON.stringify({ user_id: userId, id: course.id, title: course.title, name: course.name })
     })
     .then(res => res.json())
     .then(res => res);
