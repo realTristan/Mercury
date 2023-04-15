@@ -8,7 +8,6 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
 import { environment } from './environments/environment';
-import { SettingsComponent } from './settings/settings.component';
 import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
 import { Bookmarks } from './lib/bookmarks';
 
@@ -16,7 +15,6 @@ import { Bookmarks } from './lib/bookmarks';
   declarations: [
     AppComponent,
     CourseComponent,
-    SettingsComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,0 @@
-<!-- Create a list of bookmarked courses -->
-<div *ngFor="let course of bookmarks.list; let index = index">
-  <div class="flex cursor-pointer" (click)="bookmarks.delete(user.id, course)">
-    <p class="bg-slate-950 text-white font-bold text-2xl mt-2 ml-3 w-12 h-12 text-center p-2 flex items-center justify-center">{{index + 1}}</p>
-    <p class="hover:bg-gray-200 bg-gray-50 p-3 m-2 w-[41rem]">{{course.name}}: {{course.title}} ({{course.id}})</p>
-  </div>
-</div>

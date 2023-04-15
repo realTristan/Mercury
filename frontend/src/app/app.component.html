@@ -38,7 +38,18 @@
     </div>
 
     <!-- Show the app settings if the user is signed in hasn't searched anything yet -->
-    <app-settings *ngIf="isLoggedIn && search.value.length == 0" [user]="user"></app-settings>
+    <div *ngIf="isLoggedIn && search.value.length == 0">
+      <div *ngFor="let course of bookmarks.list; let index = index">
+        <div class="flex cursor-pointer">
+          <p class="bg-slate-950 text-white font-bold text-2xl mt-2 ml-3 w-12 h-12 text-center p-2 flex items-center justify-center"
+            (click)="bookmarks.delete(user.id, course)"
+          >
+            X
+          </p>
+          <p class="hover:bg-gray-200 bg-gray-50 p-3 m-2 w-[41rem]" (click)="query(course.name)">{{course.name}}: {{course.title}} ({{course.id}})</p>
+        </div>
+      </div>
+    </div>
 
     <!-- Results Count -->
     <p *ngIf="search.value != undefined && search.value.length > 0" class="text-gray-400">
