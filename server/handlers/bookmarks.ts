@@ -1,8 +1,8 @@
-import mongo from '../lib/mongo';
-import app from './app';
+import { get } from 'http';
+import * as mongo from '../lib/mongo.ts';
 
-// Get the bookmarks for a user
-app.get('/bookmarks/:userId', async (req: any, res: any) => {
+// Async function to get the bookmarks for a user
+export async function getBookmarks(req: any, res: any) {
   // Get the user id
   const userId = req.params.userId;
   if (userId == null) {
@@ -14,10 +14,10 @@ app.get('/bookmarks/:userId', async (req: any, res: any) => {
   await mongo.getBookmarks(userId).then((data: any) => {
     res.send(data);
   });
-});
-  
-// Insert new bookmark into mongodb
-app.post('/bookmarks', async (req: any, res: any) => {
+}
+
+// Async function to insert a new bookmark into the database
+export async function insertBookmark(req: any, res: any) {
   // Create the bookmark object
   const bookmark = {
     user_id: req.body.user_id,
@@ -30,10 +30,10 @@ app.post('/bookmarks', async (req: any, res: any) => {
   await mongo.insertBookmark(bookmark).then((data: any) => {
     res.send(data);
   });
-});
+}
 
 // Delete bookmark from mongodb
-app.delete('/bookmarks', async (req: any, res: any) => {
+export async function deleteBookmark(req: any, res: any) {
   // Create the bookmark object
   const bookmark = {
     user_id: req.body.user_id,
@@ -46,4 +46,4 @@ app.delete('/bookmarks', async (req: any, res: any) => {
   await mongo.deleteBookmark(bookmark).then((data: any) => {
     res.send(data);
   });
-});
+}

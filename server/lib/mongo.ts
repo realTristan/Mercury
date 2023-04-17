@@ -1,14 +1,19 @@
 import { MongoClient } from 'mongodb';
-import { environment } from '../environments/environment';
+import { environment } from '../environments/environment.ts';
 
 // Mongodb URI and Client
 const PASSWORD = encodeURIComponent(environment.mongo_password);
 const MONGODB_URI: string = `mongodb+srv://heytristaann:${PASSWORD}@mercury.cxmdirb.mongodb.net/?retryWrites=true&w=majority`;
 const CLIENT: any = new MongoClient(MONGODB_URI);
+
+// Load the mongo database
+connect();
+
+// Get the bookmarks collection
 const BOOKMARKS: any = CLIENT.db("mercury").collection("bookmarks");
 
 // Connect to the MongoDB cluster
-export async function connect(): Promise<void> {
+async function connect(): Promise<void> {
   // Connect to the MongoDB cluster
   try {
     // Connect to the MongoDB cluster
