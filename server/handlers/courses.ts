@@ -1,12 +1,7 @@
-import { client } from "../lib/redisearch.ts";
-
-// Remove all special characters reserved by redisearch
-function cleanQuery(query: string) {
-  return query.replace(/[\+\-\=\>\<\!\@\~\&\|\(\)\[\]\{\}\^\~\*\?\:\\\/]/g, '');
-}
+import { queryRedis } from "../lib/redisearch.ts";
 
 // Get courses handler
-export async function getCourses(req: any, res: any) {
+export async function getCourses(req: any, res: any): Promise<void> {
   // Get the query from the query parameters
   let query: string = req.query.q;
   if (query == null) {
@@ -14,26 +9,18 @@ export async function getCourses(req: any, res: any) {
     return;
   }
 
-  // Clean the query
-  query = cleanQuery(query);
-
   // Get the limit from the query parameters
   const limit: number = parseInt(req.query.limit) || 100;
 
   // Track the start time
   const startTime = Date.now();
 
-  // Get the courses from the database using redisearch
-  const results = await client.ft.search(':course.Course:index', `${query}*`, {
-    LIMIT: {
-      from: 0,
-      size: limit,
-    }
-  });
-
-  // Set the duration in milliseconds
-  results.time = Date.now() - startTime;
+  // Query Redis
+  const results = await queryCourses(':course.Course:index', query);
 
   // Send the results
-  res.send(results);
+  res.send({
+    results: results,
+    time: Date.now() - startTime
+  });
 }

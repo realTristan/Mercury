@@ -1,13 +1,13 @@
 // Import the app and environment
 import { environment } from './environments/environment.ts';
-import express from 'express';
-import bodyParser from 'body-parser';
-import cors from 'cors';
 import * as bookmarks from './handlers/bookmarks.ts';
 import * as courses from './handlers/courses.ts';
+import bodyParser from 'body-parser';
+import express from 'express';
+import cors from 'cors';
 
 // Initialize the web app
-const app = express();
+const app: any = express();
 app.use(bodyParser.json());
 app.use(cors());
 

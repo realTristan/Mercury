@@ -1,4 +1,4 @@
-from course import Course
+from data.course import Course
 from redis_om import Migrator
 import json
 
