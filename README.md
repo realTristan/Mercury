@@ -3,9 +3,6 @@
 
 # Todo
 - Add University of Guelph Courses
-- Test bookmarking courses
-- Implementation of Elasticsearch
-- Implementation of Meillisearch
 
 ## Stack (MREAN)
 - MongoDB
