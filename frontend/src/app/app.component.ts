@@ -44,7 +44,7 @@ export class AppComponent implements OnInit {
     }
 
     // Fetch the courses
-    fetch(`http://localhost:8000/courses?q=${query}`)
+    fetch(`http://localhost:9000/courses?q=${query}`)
       .then(res => res.json())
       .then(res => {
         if (res.result === undefined) {

@@ -1,3 +1,4 @@
+// @ts-ignore
 import { Client } from "@elastic/elasticsearch";
 const client: any = new Client({
   node: "http://localhost:9200",

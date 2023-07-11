@@ -4,7 +4,7 @@ import * as mongo from '../lib/mongo.ts';
 // Async function to get the bookmarks for a user
 export async function getBookmarks(req: any, res: any): Promise<void> {
   // Get the user id
-  const userId = req.params.userId;
+  const userId = req.params.user_id;
   if (userId == null) {
     res.send("Invalid user id.");
     return;
@@ -20,7 +20,7 @@ export async function getBookmarks(req: any, res: any): Promise<void> {
 export async function insertBookmark(req: any, res: any): Promise<void> {
   // Create the bookmark object
   const bookmark = {
-    user_id: req.body.user_id,
+    user_id: req.params.user_id,
     id: req.body.id,
     title: req.body.title,
     name: req.body.name
@@ -36,7 +36,7 @@ export async function insertBookmark(req: any, res: any): Promise<void> {
 export async function deleteBookmark(req: any, res: any): Promise<void> {
   // Create the bookmark object
   const bookmark = {
-    user_id: req.body.user_id,
+    user_id: req.params.user_id,
     id: req.body.id,
     title: req.body.title,
     name: req.body.name

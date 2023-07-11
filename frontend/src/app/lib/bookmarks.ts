@@ -8,7 +8,7 @@ export class Bookmarks {
   // Method to get the bookmarks for a user
   public get(userId: string): any {
     // Get the bookmarks from the database
-    return fetch(`http://localhost:9000/bookmarks/${userId}`)
+    return fetch(`http://localhost:9000/bookmarks?user_id=${userId}`)
       .then(res => res.json())
       .then(res => {
         // Set the bookmark list
@@ -25,7 +25,7 @@ export class Bookmarks {
     this.list.push(course);
 
     // Insert the bookmark into the database
-    return fetch(`http://localhost:9000/bookmarks`, {
+    return fetch(`http://localhost:9000/bookmarks?user_id=${userId}`, {
       method: 'POST',
       body: JSON.stringify({ user_id: userId, id: course.id, title: course.title, name: course.name })
     })
@@ -40,7 +40,7 @@ export class Bookmarks {
     );
     
     // Delete the bookmark from the database
-    return fetch(`http://localhost:9000/bookmarks/`, {
+    return fetch(`http://localhost:9000/bookmarks/?user_id=${userId}`, {
       method: 'DELETE',
       body: JSON.stringify({ user_id: userId, id: course.id, title: course.title, name: course.name })
     })

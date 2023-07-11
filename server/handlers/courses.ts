@@ -1,4 +1,4 @@
-import { queryRedis } from "../lib/redisearch.ts";
+import { queryCourses } from "../lib/redisearch.ts";
 
 // Get courses handler
 export async function getCourses(req: any, res: any): Promise<void> {
@@ -16,7 +16,16 @@ export async function getCourses(req: any, res: any): Promise<void> {
   const startTime = Date.now();
 
   // Query Redis
-  const results = await queryCourses(':course.Course:index', query);
+  let results: any;
+  try {
+    results = await queryCourses(":course.Course:index", query);
+  } catch (err) {
+    res.send({
+      results: [],
+      time: Date.now() - startTime
+    });
+    return;
+  }
 
   // Send the results
   res.send({

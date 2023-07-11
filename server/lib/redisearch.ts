@@ -43,7 +43,7 @@ export async function queryCourses(index: string, query: string): Promise<any> {
   const { results } = await client.ft.search(index, `${query}*`, {
     LIMIT: {
       from: 0,
-      num: 100,
+      size: 100,
     },
   });
 
