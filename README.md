@@ -3,6 +3,7 @@
 
 # Todo
 - Add University of Guelph Courses
+- Testing
 
 ## Stack (MREAN)
 - MongoDB
