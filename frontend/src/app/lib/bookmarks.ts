@@ -27,7 +27,7 @@ export class Bookmarks {
     // Insert the bookmark into the database
     return fetch(`http://localhost:9000/bookmarks?user_id=${userId}`, {
       method: 'POST',
-      body: JSON.stringify({ user_id: userId, id: course.id, title: course.title, name: course.name })
+      body: JSON.stringify({ id: course.id, title: course.title, name: course.name })
     })
     .then(res => res.json())
     .then(res => res);
@@ -38,11 +38,11 @@ export class Bookmarks {
     this.list = this.list.filter(
       (item: any) => item.id !== course.id
     );
-    
+
     // Delete the bookmark from the database
     return fetch(`http://localhost:9000/bookmarks/?user_id=${userId}`, {
       method: 'DELETE',
-      body: JSON.stringify({ user_id: userId, id: course.id, title: course.title, name: course.name })
+      body: JSON.stringify({ id: course.id, title: course.title, name: course.name })
     })
     .then(res => res.json())
     .then(res => res);

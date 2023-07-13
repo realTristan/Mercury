@@ -23,9 +23,9 @@
 
     <!-- Google Button and Search Bar -->
     <div class="flex">
-      <asl-google-signin-button 
-        type="standard" 
-        size="large" 
+      <asl-google-signin-button
+        type="standard"
+        size="large"
         class="mr-1 px-3 mt-3.5"
       >
       </asl-google-signin-button>
@@ -61,7 +61,7 @@
       <ng-container *cdkVirtualFor="let course of courses">
         <div class="my-8 w-[55rem] hover:bg-gray-100 cursor-pointer" (click)="bookmarks.insert(user.id, course)">
           <p><strong>{{ course.title }}: {{ course.name }}</strong></p>
-        
+
           <!-- Course Description -->
           <p style="font-size: 14.5px">{{ course.description }}</p>
           <p style="font-size: 13px; margin-top: 1px"><strong>Pre Requisites </strong>{{ course.pre_requisites }}</p>
